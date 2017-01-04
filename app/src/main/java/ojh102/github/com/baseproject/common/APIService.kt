@@ -10,11 +10,11 @@ import rx.Observable
  */
 interface APIService {
     @GET("search/image")
-    fun getUser(
+    fun getImages(
             @Query("apikey") apikey: String ,
             @Query("q") query: String,
-            @Query("result") result: Int,
             @Query("pageno") pageno: Int,
+            @Query("result") result: Int = 10,
             @Query("output") output: String = Define.FORMAT
     ): Observable<ResSearch>
 }

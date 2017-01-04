@@ -1,8 +1,9 @@
-package ojh102.github.com.baseproject.common.di
+package ojh102.github.com.baseproject.common
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import ojh102.github.com.baseproject.common.MyApplication
+import ojh102.github.com.baseproject.common.di.NetworkComponent
 
 /**
  * Created by OhJaeHwan on 2017-01-03.
