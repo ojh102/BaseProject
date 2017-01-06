@@ -19,15 +19,19 @@ class MainPresenter @Inject constructor(
 ) : MainContract.Presenter {
 
     override fun searchImage(keyword: String, page: Int) {
-        apiService.getImages(Define.KEY, keyword, page)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ res ->
-                    mainAdapterModel.add(res.channel.item)
-                    mainAdapterView.refreshAll()
-                }, { error ->
-                    mainView.showToast(error.message.toString())
-                })
+        if(keyword.isNotEmpty()) {
+            apiService.getImages(Define.KEY, keyword, page)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe({ res ->
+                        mainAdapterModel.add(res.channel.item)
+                        mainAdapterView.refreshAll()
+                    }, { error ->
+                        mainView.showToast(error.message.toString())
+                    })
+        } else {
+            mainView.showToast("키워드를 입력해주세요.")
+        }
     }
 
     override fun clear() {
