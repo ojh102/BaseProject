@@ -44,4 +44,10 @@ public class MainPresenterTest {
         mainPresenter.searchImage("", 1);
         verify(mainView).showToast(anyString());
     }
+
+    @Test
+    public void clear_clearAdapter() {
+        mainPresenter.clear();
+        verify(mainAdapterModel).clear();
+    }
 }

@@ -84,7 +84,6 @@ dependencies {
     //HTTP
     compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
     compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
-    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitVersion"
     compile "com.squareup.okhttp3:okhttp:$rootProject.okhttpVersion"
     compile "com.squareup.okhttp3:okhttp-urlconnection:$rootProject.okhttpVersion"
 
@@ -101,10 +100,15 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
     provided 'org.glassfish:javax.annotation:10.0-b28'
 
-    //Rx
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.1.6'
+//    //Rx
+//    compile 'io.reactivex:rxandroid:1.2.1'
+//    compile 'io.reactivex:rxjava:1.1.6'
+//    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitVersion"
 
+    //Rx2
+    compile "io.reactivex.rxjava2:rxjava:2.0.4"
+    compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+    compile "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
 }
 
 /*

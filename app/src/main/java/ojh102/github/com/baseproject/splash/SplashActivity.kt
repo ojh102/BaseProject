@@ -3,9 +3,9 @@ package ojh102.github.com.baseproject.splash
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import io.reactivex.Observable
 import ojh102.github.com.baseproject.R
 import ojh102.github.com.baseproject.main.view.MainActivity
-import rx.Observable
 import java.util.concurrent.TimeUnit
 
 class SplashActivity : AppCompatActivity() {
